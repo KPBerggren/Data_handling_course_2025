@@ -1,6 +1,7 @@
 ---
 title: "Quarto-for-git_test"
 format: html
+theme: superhero   # superhero bootswatch theme
 ---
 
 # Title 
