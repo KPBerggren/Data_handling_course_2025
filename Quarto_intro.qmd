@@ -1,0 +1,95 @@
+---
+title: "Hello world"
+format: revealjs
+#format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#| echo: true
+1 + 1
+```
+
+## Install some packages that will be used during the course
+
+```{r}
+#| echo: true
+#### load; install missing packages
+
+if (!requireNamespace("install.load", quietly = TRUE))
+    install.packages("install.load")
+
+install.load::install_load("dplyr", "raster", "ggplot2", "terra", 
+                           "sf", "ggspatial", "tidyverse")
+
+ 
+```
+
+## Make a data frame and plot a figure
+
+```{r}
+#| echo: false
+library(ggplot2)
+rating <- 1:8
+animal <- c('koala', 'hedgehog', 'sloth', 'panda','koala', 'hedgehog', 'sloth', 'panda') 
+country <- c('Australia', 'Italy', 'Peru', 'China', 'Australia', 'Italy', 'Peru', 'China')
+avg_sleep_hours <- c(21, 18, 17, 10, 12, 22, 16, 15)
+super_sleepers <- data.frame(rating, animal, country, avg_sleep_hours)
+print(super_sleepers)
+```
+
+## This is my box plot
+
+```{r}
+#| echo: true
+ggplot2::ggplot(data=super_sleepers, aes(x=animal, y= avg_sleep_hours, fill=country)) + geom_boxplot()
+```
+
+## Text styles
+
+**This is bold text**
+
+*This is a text in italics*
+
+[Underline]{.underline} what is important
+
+------------------------------------------------------------------------
+
+A separator line can be created with three stars \*\*\*
+
+Add an URL: [Nature](www.nature.com "Lets procastinate")
+
+## This is a table
+
+| Use the pipe | character to | create  | tables  |
+|--------------|--------------|---------|---------|
+| Value 1      | Value 2      | Value 3 | Value 4 |
+
+Pipe character: \|
+
+------------------------------------------------------------------------
+
+## Your turn!
+
+See the instructions on the presentation
+
+| Kolumn 1 | Kolumn 2  | Kolumn 3    | Kolumn 4 |
+|----------|-----------|-------------|----------|
+| Value 1  | *Value 2* | **Value 3** | Value 4  |
+
+I removed a table and now want to stage the changes
