@@ -4,5 +4,7 @@ For the course in data handling
 Making the text **bold** and *italics*. 
 
 ## Subtitle
-:) 
-Jag har ingen kreativitet...
+Jag har ändrat den här raden
+
+Add more text
+Smiley är borttagen
